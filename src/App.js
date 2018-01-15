@@ -1,12 +1,30 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Button from './components/Button';
 import Text from './components/Text'
+import Notification from './components/Notification';
+import Input from './components/Input'
+import LoginForm from './components/LoginForm'
+import Form from './components/Form'
+import formConfig from './config/form';
 
 function handleButtonClick() {
 	alert('button clicked');
 }
 
 class App extends Component {
+
+	state = {
+		inputValue: "inputValue123"
+	}
+
+	onInputChangeHandler(e) {
+		this.setState({ inputValue: e.target.value });
+	}
+
+	onSubmitLoginForm(login, password) {
+		console.log("Login: " );
+	}
+
 	render() {
 		return (
 			<div>
@@ -40,7 +58,7 @@ class App extends Component {
 					Props:
 						type (possible values: success / danger / info - default)
 				*/}
-				
+				<Notification>Notification text </Notification>
 
 
 				{/*
@@ -57,7 +75,13 @@ class App extends Component {
 						error (string)
 						onInputChange (function)
 				*/}
-
+				<Input
+					name="phone"
+					label="Phone :"
+					placeholder="Enter Phone Number"
+					value={this.state.inputValue}
+					error=""
+					onInputChange={this.onInputChangeHandler.bind(this)} />
 
 				{/*
 					Component:
@@ -70,7 +94,7 @@ class App extends Component {
 					Expected behavior:
 						Login and password should be printed in the console on submit button click
 				*/}
-
+				<LoginForm onSubmitLoginForm={this.onSubmitLoginForm} />
 
 
 				{/*
@@ -80,7 +104,7 @@ class App extends Component {
 					Props:
 						config (array of objects) - required
 				*/}
-
+				<Form config={formConfig}/>
 
 			</div>
 		);

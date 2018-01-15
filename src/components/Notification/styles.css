@@ -1,0 +1,16 @@
+.notification {
+    margin: 10px;
+    padding: 10px;
+}
+
+.notification-info {
+    background-color: lightblue;
+}
+
+.notification-success {
+    background-color: lightgreen;
+}
+
+.notification-danger {
+    background-color: crimson;
+}
