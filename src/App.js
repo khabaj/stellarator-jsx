@@ -21,10 +21,6 @@ class App extends Component {
 		this.setState({ inputValue: e.target.value });
 	}
 
-	onSubmitLoginForm(login, password) {
-		console.log("Login: " );
-	}
-
 	render() {
 		return (
 			<div>
