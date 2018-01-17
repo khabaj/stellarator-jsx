@@ -1,5 +1,6 @@
 import React from 'react';
-import Input from '../Input'
+import Input from '../Input';
+import PropTypes from 'prop-types';
 
 const form = ({ config }) => {
 
@@ -22,5 +23,9 @@ const form = ({ config }) => {
             {inputs}
         </form>)
 }
+
+form.propTypes = {
+    config: PropTypes.array.isRequired
+};
 
 export default form;
